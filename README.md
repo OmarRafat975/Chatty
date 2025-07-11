@@ -2,6 +2,8 @@
 
 A real-time full-stack chat application built with React, Express, Typescript, and MongoDB. Supports one-on-one messaging, user authentication, and live socket communication.
 
+**Live Demo:** [Click to view Chatty](https://chattyapp-by-omar.vercel.app/)
+
 ## 🚀 Features
 
 - 🔐 User authentication (signup, login, JWT)
