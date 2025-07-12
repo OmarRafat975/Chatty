@@ -50,7 +50,9 @@ const Chat = () => {
 
   function connectWS() {
     const host = import.meta.env.VITE_WebSocket_URL;
-    const connection = new WebSocket(`ws://${host}`);
+    const protocol = location.protocol === "https:" ? "wss" : "ws";
+    const connection = new WebSocket(`${protocol}://${host}`);
+
     setConnection(connection);
     connection?.addEventListener("message", handleMessage);
     connection?.addEventListener("close", () => {

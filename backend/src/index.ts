@@ -34,11 +34,7 @@ const startServer = async () => {
     app.use(
       cors({
         credentials: true,
-        origin: [
-          frontendURL,
-          "https://chattyapp-by-omar.vercel.app/",
-          "http://127.0.0.1:5173",
-        ],
+        origin: [frontendURL, "http://127.0.0.1:5173"],
       })
     );
     app.options(/.*/, cors());
