@@ -27,7 +27,9 @@ export function checkAuth() {
   return async (dispatch: AppDispatch, getState: () => storeType) => {
     const { auth } = getState();
     if (auth.name && auth.user) return;
-    const response = await axios.get("/users/profile");
+    const response = await axios.get("/users/profile", {
+      withCredentials: true,
+    });
     const { userId, name } = response.data.user;
     if (!userId || !name) return;
     dispatch(authActions.login({ user: userId, name }));
